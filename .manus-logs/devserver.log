@@ -1,0 +1,13 @@
+[2026-03-12T09:11:25.304Z] 5:11:25 AM [vite] (client) page reload index.html
+[2026-03-12T09:11:25.617Z] 5:11:25 AM [vite] (client) page reload client/index.html
+[2026-03-12T09:11:25.630Z] 5:11:25 AM [vite] changed tsconfig file detected: /home/ubuntu/xuncha-manual-v2/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2026-03-12T09:12:26.767Z] 5:12:26 AM [vite] (client) page reload index.html
+[2026-03-12T09:15:07.524Z] 5:15:07 AM [vite] (client) page reload client/index.html
+[2026-03-12T09:15:07.525Z] 5:15:07 AM [vite] (client) page reload index.html
+[2026-03-12T09:15:07.897Z] 5:15:07 AM [vite] changed tsconfig file detected: /home/ubuntu/xuncha-manual-v2/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2026-03-12T09:15:26.109Z] 5:15:26 AM [vite] (client) page reload client/index.html
+[2026-03-12T09:15:26.120Z] 5:15:26 AM [vite] changed tsconfig file detected: /home/ubuntu/xuncha-manual-v2/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2026-03-12T09:15:47.992Z] 5:15:47 AM [vite] (client) page reload index.html
+[2026-03-12T09:15:47.994Z] 5:15:47 AM [vite] (client) page reload index.html
+[2026-03-12T09:15:48.086Z] 5:15:48 AM [vite] changed tsconfig file detected: /home/ubuntu/xuncha-manual-v2/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2026-03-12T09:15:48.088Z] 5:15:48 AM [vite] (client) page reload client/index.html
