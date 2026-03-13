@@ -150,9 +150,35 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
+// 构建时复制 index.html 为 404.html，供 GitHub Pages 在任意子路径下回退到 SPA
+function vitePluginCopy404(): Plugin {
+  return {
+    name: "copy-404",
+    closeBundle() {
+      const outDir = path.resolve(import.meta.dirname, "dist/public");
+      const indexPath = path.join(outDir, "index.html");
+      const notFoundPath = path.join(outDir, "404.html");
+      if (fs.existsSync(indexPath)) {
+        fs.copyFileSync(indexPath, notFoundPath);
+      }
+    },
+  };
+}
+
+const plugins = [
+  react(),
+  tailwindcss(),
+  jsxLocPlugin(),
+  vitePluginManusRuntime(),
+  vitePluginManusDebugCollector(),
+  vitePluginCopy404(),
+];
+
+// GitHub Pages 部署在子路径 /xuncha-manual/，本地开发用根路径
+const base = process.env.VITE_BASE_PATH ?? "/";
 
 export default defineConfig({
+  base,
   plugins,
   resolve: {
     alias: {
