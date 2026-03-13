@@ -1,6 +1,8 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useChapterNav } from '@/hooks/useManual';
-import { ChevronDown, ChevronRight, Star, X } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
+import { isAuthEnabled } from '@/lib/auth';
+import { ChevronDown, ChevronRight, LogOut, Star, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { Chapter } from '@/types/manual';
 
@@ -14,6 +16,7 @@ interface SidebarProps {
 
 export default function Sidebar({ activeChapterId, activeSectionId, onNavigate, isMobileOpen, onMobileClose }: SidebarProps) {
   const { chapters, getChapterIcon } = useChapterNav();
+  const { signOut } = useAuth();
   // Only keep one chapter expanded at a time (the active one)
   const [manuallyExpanded, setManuallyExpanded] = useState<string | null>(null);
 
@@ -190,6 +193,17 @@ export default function Sidebar({ activeChapterId, activeSectionId, onNavigate, 
 
       {/* Footer */}
       <div className="p-4" style={{ borderTop: '1px solid oklch(0.22 0.025 250)' }}>
+        {isAuthEnabled() && (
+          <button
+            type="button"
+            onClick={() => void signOut()}
+            className="w-full flex items-center justify-center gap-2 py-2 rounded-lg text-sm transition-colors mb-3"
+            style={{ color: 'oklch(0.6 0.02 250)' }}
+          >
+            <LogOut size={14} />
+            退出登录
+          </button>
+        )}
         <p className="text-xs text-center" style={{ color: 'oklch(0.4 0.015 250)' }}>
           党委巡察工作领导小组办公室
         </p>
